@@ -16,7 +16,7 @@ export const RoleSwitcher: React.FC<{ className?: string }> = ({ className }) =>
   return (
     <div
       className={cn(
-        'inline-flex items-center rounded-2xl bg-[#F0F2EB] p-1 border border-[#C4DDD0] shadow-xs',
+        'inline-flex items-center rounded-2xl bg-muted p-1 border border-border shadow-xs transition-colors',
         className
       )}
       role="group"
@@ -31,18 +31,18 @@ export const RoleSwitcher: React.FC<{ className?: string }> = ({ className }) =>
             key={r.id}
             onClick={() => setRole(r.id)}
             className={cn(
-              'flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-xs font-bold transition-all duration-200 select-none',
+              'flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 select-none',
               isActive
-                ? 'bg-white text-[#254E3B] shadow-xs border border-[#C4DDD0]/60'
-                : 'text-[#5F7368] hover:text-[#254E3B] hover:bg-white/40'
+                ? 'bg-card text-[#254E3B] dark:text-foreground shadow-xs border border-border/80'
+                : 'text-muted-foreground hover:text-foreground hover:bg-card/50'
             )}
             title={r.sub}
             aria-pressed={isActive}
           >
             <Icon
               className={cn(
-                'h-3.5 w-3.5 sm:h-3.5 sm:w-3.5',
-                isActive ? 'text-[#477B62]' : 'text-[#5F7368]'
+                'h-3.5 w-3.5',
+                isActive ? 'text-[#477B62] dark:text-primary' : 'text-muted-foreground'
               )}
             />
             <span>{r.label}</span>

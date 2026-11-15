@@ -3,11 +3,11 @@ import { useCare } from '@/context/CareContext'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { 
-  Sparkles, 
-  Pill, 
-  FileText, 
-  CheckCircle2, 
+import {
+  Sparkles,
+  Pill,
+  FileText,
+  CheckCircle2,
   ShieldCheck,
   Bot
 } from 'lucide-react'
@@ -71,9 +71,9 @@ export const AiInsightsPage: React.FC = () => {
         </Badge>
       </div>
 
-      {/* Grid: 2 Intelligent AI modules */}
+      {/*  Intelligent AI modules */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Module 1: Plain Language Medical Report Simplifier */}
+        {/* Plain Language Medical Report Simplifier */}
         <Card className="rounded-3xl border border-sage-200 bg-white shadow-card flex flex-col">
           <CardHeader>
             <div className="flex items-center gap-2">
@@ -123,7 +123,7 @@ export const AiInsightsPage: React.FC = () => {
           </CardContent>
         </Card>
 
-        {/* Module 2: Polypharmacy & Drug Interaction Checker */}
+        {/* Polypharmacy & Drug Interaction Checker */}
         <Card className="rounded-3xl border border-sage-200 bg-white shadow-card flex flex-col">
           <CardHeader>
             <div className="flex items-center gap-2">

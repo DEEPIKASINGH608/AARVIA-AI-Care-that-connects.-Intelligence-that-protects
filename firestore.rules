@@ -1,0 +1,50 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper function to check if the user is authenticated via Firebase Auth
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Helper function to verify user document ownership
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // 1. User Profiles: Users can only read and write their own profile
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // 2. Medications: Restricted to authenticated care circle participants
+    match /medications/{medId} {
+      allow read, write: if isAuthenticated();
+    }
+
+    // 3. Vitals & Health Records: Restricted to authenticated users
+    match /vitals/{vitalId} {
+      allow read, write: if isAuthenticated();
+    }
+
+    // 4. Appointments: Restricted to authenticated users
+    match /appointments/{apptId} {
+      allow read, write: if isAuthenticated();
+    }
+
+    // 5. Care Circles: Restricted to authenticated members
+    match /careCircles/{circleId} {
+      allow read, write: if isAuthenticated();
+    }
+
+    // 6. Emergency Alerts & SOS: Restricted to authenticated users
+    match /alerts/{alertId} {
+      allow read, write: if isAuthenticated();
+    }
+
+    // 7. Dose Logs: Restricted to authenticated users
+    match /doseLogs/{logId} {
+      allow read, write: if isAuthenticated();
+    }
+  }
+}

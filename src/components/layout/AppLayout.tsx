@@ -11,7 +11,7 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
 
   return (
-    <div className="flex min-h-screen bg-[#F7F8F3] text-[#25352D]">
+    <div className="flex min-h-screen bg-background text-foreground transition-colors duration-200">
       {/* Accessible skip link */}
       <a
         href="#main-content"
@@ -24,9 +24,9 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
       <Sidebar />
 
       {/* Mobile Navigation Drawer */}
-      <MobileNav 
-        isOpen={mobileNavOpen} 
-        onClose={() => setMobileNavOpen(false)} 
+      <MobileNav
+        isOpen={mobileNavOpen}
+        onClose={() => setMobileNavOpen(false)}
       />
 
       {/* Main Body Column */}
@@ -39,25 +39,25 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
           <div
             role="alert"
             aria-live="assertive"
-            className="bg-[#C65D59]/10 border-b border-[#C65D59]/30 px-4 sm:px-8 py-3 text-[#25352D]"
+            className="bg-[#C65D59]/10 dark:bg-[#C65D59]/20 border-b border-[#C65D59]/30 px-4 sm:px-8 py-3 text-foreground"
           >
             <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
               <div className="flex items-center gap-2.5">
-                <span className="flex h-7 w-7 items-center justify-center rounded-xl bg-[#C65D59] text-white animate-pulse shadow-xs">
+                <span className="flex h-7 w-7 items-center justify-center rounded-xl bg-[#C65D59] text-white animate-pulse shadow-xs shrink-0">
                   <AlertTriangle className="h-4 w-4" />
                 </span>
                 <div>
-                  <span className="font-extrabold text-[#8E3633]">Care Notice: </span>
-                  <span className="font-medium text-[#25352D]">{activeAlerts[0].message}</span>
+                  <span className="font-extrabold text-[#8E3633] dark:text-[#F29B98]">Care Notice: </span>
+                  <span className="font-medium text-foreground">{activeAlerts[0].message}</span>
                 </div>
               </div>
               <Button
                 onClick={() => resolveAlert(activeAlerts[0].id)}
                 variant="outline"
                 size="sm"
-                className="bg-white hover:bg-[#F8E7E6] text-[#8E3633] border-[#C65D59]/40 text-xs shrink-0 font-bold"
+                className="bg-card hover:bg-[#F8E7E6] dark:hover:bg-[#C65D59]/30 text-[#8E3633] dark:text-[#F29B98] border-[#C65D59]/40 text-xs shrink-0 font-bold"
               >
-                <CheckCircle className="h-3.5 w-3.5 mr-1 text-[#477B62]" />
+                <CheckCircle className="h-3.5 w-3.5 mr-1 text-[#477B62] dark:text-primary" />
                 Mark Resolved
               </Button>
             </div>
@@ -74,10 +74,10 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
         </main>
 
         {/* Consistent Layout Footer */}
-        <footer className="mt-auto border-t border-[#C4DDD0]/60 bg-white/60 py-5 text-xs text-[#5F7368] px-4 sm:px-8">
+        <footer className="mt-auto border-t border-border bg-card/60 py-5 text-xs text-muted-foreground px-4 sm:px-8">
           <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center gap-2 font-bold text-[#254E3B]">
-              <Shield className="h-4 w-4 text-[#477B62]" />
+            <div className="flex items-center gap-2 font-bold text-[#254E3B] dark:text-primary">
+              <Shield className="h-4 w-4 text-[#477B62] dark:text-primary" />
               <span>AARVIA AI — Care that connects. Intelligence that protects.</span>
             </div>
             <div className="flex items-center gap-4 text-[11px]">

@@ -4,12 +4,12 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { 
-  Stethoscope, 
-  CheckCircle2, 
-  Pill, 
-  PlusCircle, 
-  Clock, 
+import {
+  Stethoscope,
+  CheckCircle2,
+  Pill,
+  PlusCircle,
+  Clock,
   HeartPulse
 } from 'lucide-react'
 import { formatTime } from '@/utils/date'
@@ -159,7 +159,6 @@ export const CaregiverDashboard: React.FC = () => {
           </Card>
         </div>
 
-        {/* Right Column: Shift Checklist & Recent Vitals */}
         <div className="space-y-6">
           <Card className="rounded-3xl border border-sage-200 bg-white">
             <CardHeader className="pb-3">

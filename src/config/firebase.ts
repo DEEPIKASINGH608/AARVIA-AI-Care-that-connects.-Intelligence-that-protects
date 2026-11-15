@@ -32,11 +32,10 @@ if (isFirebaseConfigured) {
     db = getFirestore(app)
     storage = getStorage(app)
   } catch (error) {
-    console.warn('[CareCircle AI] Firebase initialization warning:', error)
+    console.warn('AARVIA AI Firebase initialization warning:', error)
   }
 } else {
-  // App is running with secure environment mock fallback for development & demo
-  console.info('[CareCircle AI] Running in local demo mode with mock data layer. To connect live Firebase, fill in credentials in .env')
+  console.info('[AARVIA AI] Running in local demo mode with mock data layer. To connect live Firebase, fill in credentials in .env')
 }
 
 export { app, auth, db, storage }

@@ -18,8 +18,8 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: '#F7F8F3',
-        foreground: '#25352D',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         brand: {
           primary: '#477B62',
           dark: '#254E3B',
@@ -30,8 +30,8 @@ export default {
           danger: '#C65D59',
         },
         primary: {
-          DEFAULT: '#477B62',
-          foreground: '#FFFFFF',
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
           50: '#F2F7F4',
           100: '#E1EDE6',
           200: '#C4DDD0',
@@ -106,24 +106,24 @@ export default {
           700: '#8E3633',
         },
         card: {
-          DEFAULT: '#FFFFFF',
-          foreground: '#25352D',
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
         secondary: {
-          DEFAULT: '#254E3B',
-          foreground: '#FFFFFF',
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
         destructive: {
           DEFAULT: '#C65D59',
           foreground: '#FFFFFF',
         },
         muted: {
-          DEFAULT: '#F0F2EB',
-          foreground: '#5F7368',
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
         },
         accent: {
-          DEFAULT: '#E1EDE6',
-          foreground: '#254E3B',
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
         },
       },
       borderRadius: {

@@ -16,7 +16,6 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Directly initialize with stored user or fallback to senior Eleanor for instant hackathon evaluation
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(() => {
     const existing = authService.getCurrentUser()
     return existing || MOCK_ELDER
@@ -30,10 +29,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const updatedUser: UserProfile = {
         ...currentUser,
         role,
-        fullName: role === 'family' 
-          ? 'Michael Vance' 
-          : role === 'caregiver' 
-            ? 'Maria Santos' 
+        fullName: role === 'family'
+          ? 'Michael Vance'
+          : role === 'caregiver'
+            ? 'Maria Santos'
             : 'Eleanor Vance',
       }
       setCurrentUser(updatedUser)

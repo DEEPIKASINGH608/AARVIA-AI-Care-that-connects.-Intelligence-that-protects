@@ -1,8 +1,3 @@
-/**
- * AARVIA AI Centralized Theme Tokens & Design System
- * Intelligent Elderly Care & Medication Management Ecosystem
- */
-
 export const THEME_CONFIG = {
   appName: 'AARVIA AI',
   tagline: 'Care that connects. Intelligence that protects.',

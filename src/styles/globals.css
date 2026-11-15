@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background #F7F8F3 */
+    --background: 75 14% 96%;
+    /* Text #25352D */
+    --foreground: 147 18% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 147 18% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 147 18% 18%;
+
+    /* Primary #477B62 */
+    --primary: 151 27% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Dark green #254E3B */
+    --secondary: 151 35% 23%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted */
+    --muted: 75 12% 93%;
+    --muted-foreground: 151 10% 41%;
+
+    /* Accent */
+    --accent: 147 20% 91%;
+    --accent-foreground: 151 35% 23%;
+
+    /* Danger #C65D59 */
+    --destructive: 2 49% 56%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Warning #D99A38 */
+    --warning: 36 68% 54%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 147 15% 88%;
+    --input: 147 15% 88%;
+    --ring: 151 27% 38%;
+
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background-color: #F7F8F3;
+    color: #25352D;
+    font-family: 'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :focus-visible {
+    outline: 2px solid #477B62;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .text-elder-display {
+    @apply text-3xl sm:text-4xl font-extrabold tracking-tight text-[#254E3B] leading-tight;
+  }
+  
+  .text-elder-title {
+    @apply text-xl sm:text-2xl font-bold text-[#254E3B] leading-snug;
+  }
+
+  .text-elder-body {
+    @apply text-lg text-[#25352D] leading-relaxed font-normal;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(196, 221, 208, 0.5);
+  }
+
+  .glass-header {
+    background: rgba(247, 248, 243, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+/* Custom scrollbar matching palette */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0F2EB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4DDD0;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9EBFB0;
+}
